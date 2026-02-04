@@ -64,12 +64,13 @@ color = Color(0.032773, 0.590612, 0.483446, 1)
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 381.0
-offset_top = 59.0
-offset_right = 606.0
-offset_bottom = 73.0
+offset_left = 364.0
+offset_top = 62.0
+offset_right = 644.0
+offset_bottom = 90.0
 theme_override_fonts/font = ExtResource("2_044or")
-text = "EnterCommands Here"
+theme_override_font_sizes/font_size = 32
+text = "EnterCommands Here 0"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 offset_left = 250.0
