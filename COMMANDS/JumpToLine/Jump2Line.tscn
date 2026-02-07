@@ -1,20 +1,22 @@
-[gd_scene format=3 uid="uid://by7w1dmpkmuu1"]
+[gd_scene format=3 uid="uid://wa2ainw73s4a"]
 
-[ext_resource type="Script" uid="uid://b1hl3yxv6lqef" path="res://COMMANDS/Move/move.gd" id="1_onk2h"]
-[ext_resource type="FontFile" uid="uid://dgd4yq20pd3xq" path="res://Assets/m6x11.ttf" id="1_t6p4u"]
+[ext_resource type="Script" uid="uid://bqdm54xrm6www" path="res://COMMANDS/JumpToLine/Jump2Line.gd" id="1_flj6l"]
+[ext_resource type="FontFile" uid="uid://dgd4yq20pd3xq" path="res://Assets/m6x11.ttf" id="2_mrjx8"]
 
-[node name="Move" type="Control" unique_id=933161840]
+[node name="Jump2Line" type="Control" unique_id=933161840]
 texture_filter = 1
 custom_minimum_size = Vector2(185, 100)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -937.0
-offset_bottom = -558.0
+offset_left = -224.0
+offset_top = -135.0
+offset_right = -679.0
+offset_bottom = -395.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_onk2h")
+script = ExtResource("1_flj6l")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=793723616]
 layout_mode = 1
@@ -40,7 +42,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -62.0
 offset_top = -25.5
-offset_right = 31.0
+offset_right = 6.5
 offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -58,8 +60,8 @@ offset_right = 29.0
 offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_t6p4u")
-text = "Move"
+theme_override_fonts/font = ExtResource("2_mrjx8")
+text = "JumpLine"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -76,7 +78,7 @@ offset_right = 62.5
 offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_t6p4u")
+theme_override_fonts/font = ExtResource("2_mrjx8")
 text = "x"
 
 [node name="Label" type="Label" parent="." unique_id=318739893]
@@ -92,7 +94,7 @@ offset_right = -62.5
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_t6p4u")
+theme_override_fonts/font = ExtResource("2_mrjx8")
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -110,7 +112,7 @@ offset_right = 61.5
 offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_t6p4u")
+theme_override_fonts/font = ExtResource("2_mrjx8")
 text = "^"
 
 [node name="Button4" type="Button" parent="." unique_id=1560775140]
@@ -126,7 +128,22 @@ offset_right = 62.5
 offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_t6p4u")
+theme_override_fonts/font = ExtResource("2_mrjx8")
 text = "v"
+
+[node name="SpinBox" type="SpinBox" parent="." unique_id=152879740]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 10.5
+offset_top = -15.0
+offset_right = 97.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 50.0
 
 [connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]

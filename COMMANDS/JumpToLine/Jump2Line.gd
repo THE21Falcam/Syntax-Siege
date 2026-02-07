@@ -1,6 +1,6 @@
 extends Control
 
-@export var Command = "Move"
+@export var Command = "J2L"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://clia4ebdghccc"]
+[gd_scene format=4 uid="uid://clia4ebdghccc"]
 
 [ext_resource type="Script" uid="uid://osg2sm72360f" path="res://RobotCode/RobotCode.gd" id="1_w28yb"]
 [ext_resource type="FontFile" uid="uid://dgd4yq20pd3xq" path="res://Assets/m6x11.ttf" id="2_044or"]
@@ -46,62 +46,66 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1131288163]
 texture_filter = 1
 script = ExtResource("1_w28yb")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1095451246]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = -77.0
+offset_top = -28.0
+offset_right = 1203.0
+offset_bottom = 692.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.032773, 0.590612, 0.483446, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=411013210]
 texture_filter = 1
-offset_left = 364.0
-offset_top = 62.0
-offset_right = 644.0
-offset_bottom = 90.0
+offset_left = 539.0
+offset_top = 183.0
+offset_right = 819.0
+offset_bottom = 242.0
 theme_override_fonts/font = ExtResource("2_044or")
 theme_override_font_sizes/font_size = 32
-text = "EnterCommands Here 0"
+text = "Enter Commands Here 
+"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_left = 250.0
-offset_top = 92.0
-offset_right = 743.0
-offset_bottom = 458.0
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1285775011]
+offset_left = 552.0
+offset_top = 219.0
+offset_right = 793.0
+offset_bottom = 409.0
 horizontal_scroll_mode = 0
+metadata/_edit_group_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1633174113]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("3_w28yb")
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=585598139]
 custom_minimum_size = Vector2(30, 31)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "+"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1223812353]
 texture_filter = 1
-offset_left = 271.0
-offset_top = 469.0
-offset_right = 706.0
-offset_bottom = 580.5
+offset_left = 543.0
+offset_top = 424.0
+offset_right = 805.0
+offset_bottom = 495.5
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.35
 metadata/_edit_group_ = true
 
-[node name="Run" type="Button" parent="HBoxContainer"]
+[node name="Run" type="Button" parent="HBoxContainer" unique_id=1454967221]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -111,7 +115,7 @@ theme_override_fonts/font = ExtResource("2_044or")
 text = "Run 
 "
 
-[node name="Stop" type="Button" parent="HBoxContainer"]
+[node name="Stop" type="Button" parent="HBoxContainer" unique_id=686083366]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -122,41 +126,41 @@ disabled = true
 text = "Stop
 "
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(640, 360)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=222918406]
+position = Vector2(831, 347)
 
-[node name="RobotGround" type="TileMapLayer" parent="."]
+[node name="RobotGround" type="TileMapLayer" parent="." unique_id=571641307]
 position = Vector2(510, 150)
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAARAAcAAgABAAEAAAARAAYAAgABAAEAAAARAAUAAgABAAEAAAARAAQAAgABAAEAAAARAAMAAgABAAEAAAAQAAgAAgABAAEAAAAQAAcAAgABAAEAAAAQAAYAAgABAAEAAAAQAAUAAgABAAEAAAAQAAQAAgABAAEAAAAQAAMAAgABAAEAAAAPAAgAAgABAAEAAAAPAAcAAgABAAEAAAAPAAYAAgABAAEAAAAPAAUAAgABAAEAAAAPAAQAAgABAAEAAAAPAAMAAgABAAEAAAAOAAgAAgABAAEAAAAOAAcAAgABAAEAAAAOAAYAAgABAAEAAAAOAAUAAgABAAEAAAAOAAQAAgABAAEAAAAOAAMAAgABAAEAAAANAAgAAgABAAEAAAANAAcAAgABAAEAAAANAAYAAgABAAEAAAANAAUAAgABAAEAAAANAAQAAgABAAEAAAANAAMAAgABAAEAAAAMAAgAAgABAAEAAAAMAAcAAgABAAEAAAAMAAYAAgABAAEAAAAMAAUAAgABAAEAAAAMAAQAAgABAAEAAAAMAAMAAgABAAEAAAALAAgAAgABAAEAAAALAAcAAgABAAEAAAALAAYAAgABAAEAAAALAAUAAgABAAEAAAALAAQAAgABAAEAAAALAAMAAgABAAEAAAAKAAMAAgAAAAEAAAAKAAQAAgAAAAEAAAAKAAUAAgAAAAEAAAAKAAYAAgAAAAEAAAAKAAcAAgAAAAEAAAAKAAgAAgAAAAEAAAARAAgAAgABAAEAAAAMAAkAAgABAAIAAAALAAkAAgABAAIAAAAKAAkAAgAAAAIAAAANAAkAAgABAAIAAAAOAAkAAgABAAIAAAAPAAkAAgABAAIAAAAQAAkAAgABAAIAAAAKAAIAAgAAAAAAAAALAAIAAgABAAAAAAAMAAIAAgABAAAAAAANAAIAAgABAAAAAAAOAAIAAgABAAAAAAAPAAIAAgABAAAAAAAQAAIAAgABAAAAAAARAAIAAgABAAAAAAASAAIAAgACAAAAAAASAAMAAgACAAEAAAASAAQAAgACAAEAAAASAAUAAgACAAEAAAASAAYAAgACAAEAAAASAAcAAgACAAEAAAASAAgAAgACAAEAAAASAAkAAgACAAIAAAARAAkAAgABAAIAAAA=")
 tile_set = ExtResource("3_0hq0k")
 
-[node name="Robot" type="CharacterBody2D" parent="."]
+[node name="Robot" type="CharacterBody2D" parent="." unique_id=1454210528]
 position = Vector2(910, 326)
 scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot" unique_id=1772859422]
 shape = SubResource("RectangleShape2D_3m42p")
 
-[node name="Marker2D" type="Marker2D" parent="Robot/CollisionShape2D"]
+[node name="Marker2D" type="Marker2D" parent="Robot/CollisionShape2D" unique_id=47556256]
 
-[node name="Sprite-0002" type="Sprite2D" parent="Robot/CollisionShape2D/Marker2D"]
+[node name="Sprite-0002" type="Sprite2D" parent="Robot/CollisionShape2D/Marker2D" unique_id=629232080]
 position = Vector2(7, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_cvt3f")
 
-[node name="RayCast2D" type="RayCast2D" parent="Robot/CollisionShape2D"]
+[node name="RayCast2D" type="RayCast2D" parent="Robot/CollisionShape2D" unique_id=430997616]
 scale = Vector2(0.5, 0.5)
 target_position = Vector2(0, 16)
 
-[node name="RobotSprite" type="AnimatedSprite2D" parent="Robot"]
+[node name="RobotSprite" type="AnimatedSprite2D" parent="Robot" unique_id=1145085834]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_o6acd")
 animation = &"Default"
 autoplay = "Default"
 
-[node name="Run_Speed_Timer" type="Timer" parent="."]
+[node name="Run_Speed_Timer" type="Timer" parent="." unique_id=1292417257]
 
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Button" to="ScrollContainer/VBoxContainer" method="_on_button_button_up"]
 [connection signal="button_up" from="HBoxContainer/Run" to="." method="_on_run_button_up"]

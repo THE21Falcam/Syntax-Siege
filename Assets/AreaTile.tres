@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://1bmftsav1kh2"]
+[gd_resource type="TileSet" format=3 uid="uid://1bmftsav1kh2"]
 
 [ext_resource type="Texture2D" uid="uid://dt486bsvt1q4" path="res://Assets/spring.png" id="1_jmwjh"]
 

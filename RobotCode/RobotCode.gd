@@ -33,33 +33,27 @@ func _ready():
 	line_timer.wait_time = 0.5  # 1 second delay
 	line_timer.one_shot = false
 	add_child(line_timer)
-	#line_timer.timeout.connect(_on_line_timer_timeout)
+	line_timer.timeout.connect(_on_line_timer_timeout)
 
 func start_code():
 	Current_line = 0
 	Code_Run = true
 	line_timer.start()
 
-#func _on_line_timer_timeout():
-	#if Code_Run and Current_line < TestEdit.get_line_count():
-		#var linetext = TestEdit.get_line(Current_line)
-		#var Split_Command = linetext.split(" ")
-		#if linetext == "move_forward":
-			#print("Move")
-			#move()
-		#elif linetext == "turn_left":
-			#print("TurnL")
-			#$Robot/CollisionShape2D/Marker2D.rotation -= rotation_step
-			#direction = direction.rotated(-rotation_step).round()
-			#raycast.target_position = direction * tile_size
-			#raycast.force_raycast_update()
-		#elif linetext == "turn_right":
-			#print("TurnR")
-			#$Robot/CollisionShape2D/Marker2D.rotation += rotation_step
-			#direction = direction.rotated(rotation_step).round()
-			#print(direction)
-			#raycast.target_position = direction * tile_size
-			#raycast.force_raycast_update()
+func _on_line_timer_timeout():
+	if Code_Run and Current_line < $ScrollContainer/VBoxContainer.instantiated_objects.size():
+		if $ScrollContainer/VBoxContainer.instantiated_objects[Current_line].Command == "Move":
+			print("Move")
+			move()
+		elif $ScrollContainer/VBoxContainer.instantiated_objects[Current_line].Command == "J2L":
+			pass
+			
+		Current_line += 1
+	else:
+		Code_Run = false
+		line_timer.stop()
+		$HBoxContainer/Run.disabled = false
+		$HBoxContainer/Stop.disabled = true
 		#elif Split_Command[0] == "jump_to_line":
 			#print("J2L")
 			#if Split_Command.size() == 2 && Split_Command[1].is_valid_int():
@@ -70,11 +64,7 @@ func start_code():
 				#await get_tree().create_timer(int(Split_Command[1])).timeout
 			#
 		#Current_line += 1
-	#else:
-		#Code_Run = false
-		#line_timer.stop()
-		#$CanvasLayer/CommandWindow/HBoxContainer/Run.disabled = false
-		#$CanvasLayer/CommandWindow/HBoxContainer/Stop.disabled = true
+
 
 func move():
 	if !raycast.is_colliding():
@@ -86,13 +76,13 @@ func move():
 
 func _on_run_button_up() -> void:
 	start_code()
-	$CanvasLayer/CommandWindow/HBoxContainer/Run.disabled = true
-	$CanvasLayer/CommandWindow/HBoxContainer/Stop.disabled = false
+	$HBoxContainer/Run.disabled = true
+	$HBoxContainer/Stop.disabled = false
 
 func _on_stop_button_up() -> void:
 	Code_Run = false
-	$CanvasLayer/CommandWindow/HBoxContainer/Run.disabled = false
-	$CanvasLayer/CommandWindow/HBoxContainer/Stop.disabled = true
+	$HBoxContainer/Run.disabled = false
+	$HBoxContainer/Stop.disabled = true
 
 func _on_end_button_button_up() -> void:
 	get_tree().quit()
