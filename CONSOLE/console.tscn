@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://6kyepprekn81"]
+
+[ext_resource type="FontFile" uid="uid://dgd4yq20pd3xq" path="res://Assets/m6x11.ttf" id="1_7u3ff"]
+[ext_resource type="Script" uid="uid://cuisa644njdl2" path="res://CONSOLE/console.gd" id="1_p3b7t"]
+
+[sub_resource type="Theme" id="Theme_16mip"]
+default_font = ExtResource("1_7u3ff")
+default_font_size = 22
+
+[node name="CONSOLE" type="Control" unique_id=861182494]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -342.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_16mip")
+script = ExtResource("1_p3b7t")
+
+[node name="Label" type="Label" parent="." unique_id=890724338]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -160.5
+offset_right = 93.0
+offset_bottom = -137.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ENTER COMMAND HERE"
+
+[node name="SHOW" type="ScrollContainer" parent="." unique_id=1809582078]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -119.5
+offset_right = 115.0
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SHOW" unique_id=1630450297]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PLUS" type="Button" parent="SHOW/VBoxContainer" unique_id=1616814555]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "+"
+
+[node name="SELECT" type="ScrollContainer" parent="." unique_id=315863524]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -119.5
+offset_right = 115.0
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SELECT" unique_id=1916460071]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MOVEADD" type="Button" parent="SELECT/VBoxContainer" unique_id=423180077]
+layout_mode = 2
+text = "MOVE"
+
+[node name="J2LADD" type="Button" parent="SELECT/VBoxContainer" unique_id=1352787658]
+layout_mode = 2
+text = "JUMP TO LINE"
+
+[node name="EXECUTE" type="HBoxContainer" parent="." unique_id=1192136489]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = 104.0
+offset_right = 120.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RUN" type="Button" parent="EXECUTE" unique_id=907358381]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RUN"
+
+[node name="STOP" type="Button" parent="EXECUTE" unique_id=128236318]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "STOP"
+
+[connection signal="button_up" from="SHOW/VBoxContainer/PLUS" to="." method="_on_plus_button_up"]
+[connection signal="button_up" from="SELECT/VBoxContainer/MOVEADD" to="." method="_on_moveadd_button_up"]
+[connection signal="button_up" from="SELECT/VBoxContainer/J2LADD" to="." method="_on_j_2ladd_button_up"]
+[connection signal="button_up" from="EXECUTE/RUN" to="." method="_on_run_button_up"]
+[connection signal="button_up" from="EXECUTE/STOP" to="." method="_on_stop_button_up"]

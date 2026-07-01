@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cfyttkjn0p3ac"]
+
+[ext_resource type="Texture2D" uid="uid://b2trf6sh5ksd0" path="res://Assets/Sprite-0002.png" id="1_hghnl"]
+[ext_resource type="Script" uid="uid://c5texunnc6dlt" path="res://ROBOT/robot.gd" id="1_qhix7"]
+[ext_resource type="Texture2D" uid="uid://cuk7s684imwda" path="res://Assets/mHero_.png" id="2_qhix7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ntcw"]
+size = Vector2(30, 32)
+
+[node name="ROBOT" type="CharacterBody2D" unique_id=841810180]
+script = ExtResource("1_qhix7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1512576867]
+shape = SubResource("RectangleShape2D_8ntcw")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1637981031]
+target_position = Vector2(0, 16)
+
+[node name="ANCOR" type="Marker2D" parent="." unique_id=1611058420]
+gizmo_extents = 0.0
+
+[node name="Sprite0002" type="Sprite2D" parent="ANCOR" unique_id=1733239893]
+texture_filter = 1
+position = Vector2(14, 0)
+texture = ExtResource("1_hghnl")
+
+[node name="MHero" type="Sprite2D" parent="." unique_id=978201442]
+texture_filter = 1
+position = Vector2(0, -8)
+scale = Vector2(2, 2)
+texture = ExtResource("2_qhix7")
+hframes = 8
+vframes = 6

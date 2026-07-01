@@ -79,7 +79,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_t6p4u")
 text = "x"
 
-[node name="Label" type="Label" parent="." unique_id=318739893]
+[node name="INDEX_NUM" type="Label" parent="." unique_id=318739893]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -93,11 +93,11 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_t6p4u")
-text = "1"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button3" type="Button" parent="." unique_id=1245355102]
+[node name="MOVEUP" type="Button" parent="." unique_id=1245355102]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -113,7 +113,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_t6p4u")
 text = "^"
 
-[node name="Button4" type="Button" parent="." unique_id=1560775140]
+[node name="MOVEDOWN" type="Button" parent="." unique_id=1560775140]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
